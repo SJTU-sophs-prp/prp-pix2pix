@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+  File "./py/train.py", line 25, in <module>
+    from util.visualizer import Visualizer
+  File "/home/painting/code/G2/py/util/visualizer.py", line 11, in <module>
+    import wandb
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/__init__.py", line 32, in <module>
+    from wandb import sdk as wandb_sdk
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/sdk/__init__.py", line 12, in <module>
+    from .wandb_init import _attach, init  # noqa: F401
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/sdk/wandb_init.py", line 35, in <module>
+    from .backend.backend import Backend
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/sdk/backend/backend.py", line 21, in <module>
+    from ..interface.interface import InterfaceBase
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/sdk/interface/interface.py", line 21, in <module>
+    from wandb.proto import wandb_internal_pb2 as pb
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/proto/wandb_internal_pb2.py", line 15, in <module>
+    from wandb.proto import wandb_base_pb2 as wandb_dot_proto_dot_wandb__base__pb2
+  File "/home/painting/anaconda3/envs/painting/lib/python3.6/site-packages/wandb/proto/wandb_base_pb2.py", line 21, in <module>
+    create_key=_descriptor._internal_create_key,
+AttributeError: module 'google.protobuf.descriptor' has no attribute '_internal_create_key'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: ./datasets/home/painting/code/data/contrast_mask_1/	[default: None]
+             dataset_mode: aligned                       
+                direction: BtoA                          	[default: AtoB]
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: pix2pix                       	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: wuyong_contrast_lsgan_step_0.6_150	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_256                      
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                 num_test: 3000                          	[default: 50]
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: none                          	[default: resize_and_crop]
+              results_dir: ./results/contrast_mask_1_test/	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+Traceback (most recent call last):
+  File "./py/test.py", line 50, in <module>
+    dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
+  File "/home/painting/code/G2/py/data/__init__.py", line 57, in create_dataset
+    data_loader = CustomDatasetDataLoader(opt)
+  File "/home/painting/code/G2/py/data/__init__.py", line 73, in __init__
+    self.dataset = dataset_class(opt)
+  File "/home/painting/code/G2/py/data/aligned_dataset.py", line 22, in __init__
+    self.A_paths = sorted(make_dataset(os.path.join(self.dir_AB, "A"), opt.max_dataset_size))  # get A path
+  File "/home/painting/code/G2/py/data/image_folder.py", line 25, in make_dataset
+    assert os.path.isdir(dir), '%s is not a valid directory' % dir
+AssertionError: ./datasets/home/painting/code/data/contrast_mask_1/test/A is not a valid directory

@@ -1,0 +1,3 @@
+/home/xuzhekai/2022holiday/prp/train_bash/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xuzhekai/2022holiday/prp/train_bash/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/xuzhekai/2022holiday/prp/train_bash/cmake-build-debug/CMakeFiles/train_bash.dir

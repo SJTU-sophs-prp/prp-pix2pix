@@ -1,0 +1,2 @@
+conda activate painting
+nohup python ./py/train.py --dataroot ./datasets/dataroto/ --name nema --model pix2pix --direction BtoA --preprocess resize_and_crop  --n_epochs 300 --batch_size 3 --gpu_ids 0,1 --continue_train --gan_mode lsgan  
